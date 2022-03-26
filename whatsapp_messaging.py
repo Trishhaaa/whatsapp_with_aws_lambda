@@ -3,18 +3,18 @@ from twilio.rest import Client
 def msg_mom_and_dad(event=None, context=None):
 
     # get your sid and auth token from twilio
-    twilio_sid = 'AC84c9f1602d7fb6af4eda5b0c39a03b37'
-    auth_token = '4a2021b28f1aa606d9c6945d3c248ebd'
+    twilio_sid = 'ACf35f5d9954dc582740331774b0a3e796'
+    auth_token = 'd03195fd957e1440ea37ba199ad94026'
 
     whatsapp_client = Client(twilio_sid, auth_token)
 
     # keep adding contacts to this dict to send
     # them the message
-    contact_directory = {'daddy':'+919624666836'}
+    contact_directory = {'Dad':'+919417534406', 'Mom': '+919417909836}
 
     for key, value in contact_directory.items():
         msg_loved_ones = whatsapp_client.messages.create(
-                body = 'good morning {} !'.format(key),
+                body = 'Good Morning {} !'.format(key),
                 from_= 'whatsapp:+14155238886',
                 to='whatsapp:' + value,
 
